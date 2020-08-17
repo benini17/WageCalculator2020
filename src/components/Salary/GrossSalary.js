@@ -7,18 +7,6 @@ export default class GrossSalary extends Component {
     this.props.onChangeSalary(grossSalary);
   };
 
-  // handleClick = (event) => {
-  //   if (event.target.value === '+') {
-  //     let clicks = clicks + 1;
-  //     this.props.onClick(clicks);
-  //     // this.setState({ clicks: this.props.clicks + 1 });
-  //   } else {
-  //     let clicks = clicks - 1;
-  //     this.props.onClick(clicks);
-  //     // this.setState({ clicks: this.props.clicks - 1 });
-  //   }
-  // };
-
   render() {
     const { grossSalary } = this.props;
 
@@ -28,14 +16,13 @@ export default class GrossSalary extends Component {
         <div className={css.flexRow}>
           <input
             placeholder="Write your monthly gross income here"
-            type="text"
+            type="number"
             value={grossSalary}
             onChange={this.HandleInputChange}
+            min={0}
+            step={50}
           />
-          <div className={css.flexColumn}>
-            {/* <button onClick={this.handleClick}>+</button>
-            <button onClick={this.handleClick}>-</button> */}
-          </div>
+          <div className={css.flexColumn}></div>
         </div>
       </div>
     );

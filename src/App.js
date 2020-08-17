@@ -19,7 +19,6 @@ export default class App extends Component {
       bar1: 0,
       bar2: 0,
       bar3: 0,
-      clicks: 0,
     };
   }
 
@@ -38,14 +37,6 @@ export default class App extends Component {
     });
   };
 
-  // setclicks = (newClicks) => {
-  //   const data = newClicks;
-
-  //   this.setState({
-  //     clicks: data,
-  //   });
-  // };
-
   render() {
     const {
       informedGrossSalary,
@@ -53,16 +44,12 @@ export default class App extends Component {
       baseIRPF,
       discountIRPF,
       netSalary,
-      clicks,
     } = this.state;
 
     return (
       <div>
         <Header />
-        <GrossSalary
-          onChangeSalary={this.handleChange}
-          // onClick={this.setClicks}
-        />
+        <GrossSalary onChangeSalary={this.handleChange} />
         <InputReadOnly
           informedGrossSalary={informedGrossSalary}
           discountINSS={discountINSS}
